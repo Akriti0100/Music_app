@@ -1,0 +1,28 @@
+{% extends 'music/base.html' %}
+
+{% block title %} Album Details {% endblock %}
+
+{% block body %}
+    <img src="{{ album.album_logo }}">
+
+    <h1>{{ album.album_title}}</h1>
+    <h3> {{ album.artist }} </h3>
+
+
+        {% for song in album.song_set.all %}
+
+            {{ song.song_title }}
+            {% if song.is_favourite %}
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngio.com%2FPNG%2F26668-yellow-star-png-no-background.html&psig=AOvVaw2zbOqMm4FWN5Q0yAGptmA3&ust=1577380076391000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjau_Kk0eYCFQAAAAAdAAAAABAD" width="16px" height="16px">
+            {% endif %}
+            <br>
+        {% endfor %}
+
+{% endblock %}
+
+<!--Displaying songs in the form of a list -->
+<!--<ul>
+    {% for song in album.song_set.all %}
+    <li>{{ song.song_title }} - {{ song.file_type }}</li>
+    {% endfor %}
+</ul>-->
