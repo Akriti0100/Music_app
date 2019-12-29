@@ -10,6 +10,8 @@ urlpatterns = [
     # /music/
     path('', views.IndexView.as_view() , name='index'),
 
+    path('register/', views.UserFormView.as_view() , name='register'),
+
     #/music/71/
     path('<int:pk>/', views.DetailView.as_view() , name='detail' ),
 
