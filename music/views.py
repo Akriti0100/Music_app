@@ -58,7 +58,7 @@ class UserFormView(View):
             if user is not None:
                 if user.is_active:
                     login(request,user)
-                    return  redirect('music:index')
+                    return redirect('music:index')
 
 
         return render(request, self.template_name,{'form' : form})
